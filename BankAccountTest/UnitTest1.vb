@@ -1,5 +1,6 @@
 ﻿Imports System.Text
-Imports Microsoft.VisualStudio.TestTools.UnitTesting
+Imports BankAccounts
+
 
 <TestClass()> Public Class UnitTest1
     <TestMethod()> Public Sub TestConstructors()
@@ -12,9 +13,9 @@ Imports Microsoft.VisualStudio.TestTools.UnitTesting
         Dim CountryOforigin As String = "Isle of MAn"
 
         'Act
-        Dim Account1 As New BankAccounts.BankAccount(Accountholder, Accountnumber, Balance, InterestRate, CountryOforigin)
-        Dim Account2 As New BankAccounts.BankAccount(Accountholder, Accountnumber, Balance, InterestRate)
-        Dim Account3 As New BankAccounts.BankAccount(Accountholder, Accountnumber, Balance)
+        Dim Account1 As New BankAccounts.BankAccount(Accountholder, Accountnumber, InterestRate, Balance, CountryOforigin)
+        Dim Account2 As New BankAccounts.BankAccount(Accountholder, Accountnumber, InterestRate, Balance)
+        Dim Account3 As New BankAccounts.BankAccount(Accountholder, Accountnumber, InterestRate)
 
         'Assert
         Assert.IsNotNull(Account1)
@@ -30,7 +31,7 @@ Imports Microsoft.VisualStudio.TestTools.UnitTesting
         Dim InterestRate As Double = 4.3
         Dim Balance As Double = 10343.82
         Dim CountryOforigin As String = "Isle of MAn"
-        Dim Account1 As New BankAccounts.BankAccount(Accountholder, Accountnumber, Balance, InterestRate, CountryOforigin)
+        Dim Account1 As New BankAccounts.BankAccount(Accountholder, Accountnumber, InterestRate, Balance, CountryOforigin)
 
         'Act
         Dim NAme As String = Account1.GetAccountHolder()
@@ -46,10 +47,10 @@ Imports Microsoft.VisualStudio.TestTools.UnitTesting
         Dim InterestRate As Double = 4.3
         Dim Balance As Double = 10343.82
         Dim CountryOforigin As String = "Isle of MAn"
-        Dim Account1 As New BankAccounts.BankAccount(Accountholder, Accountnumber, Balance, InterestRate, CountryOforigin)
+        Dim Account1 As New BankAccounts.BankAccount(Accountholder, Accountnumber, InterestRate, Balance, CountryOforigin)
 
         'Act
-        Dim IR As Double = Account1.GetInterestRate()
+        Dim IR As Double = Account1.GetInterestRAte()
 
         'Assert
         Assert.AreEqual(4, 3, IR)
@@ -62,7 +63,7 @@ Imports Microsoft.VisualStudio.TestTools.UnitTesting
         Dim InterestRate As Double = 4.3
         Dim Balance As Double = 10343.82
         Dim CountryOfOrigin As String = "Isle of Man"
-        Dim Account1 As New BankAccounts.BankAccount(Accountholder, Accountnumber, Balance, InterestRate, CountryOforigin)
+        Dim Account1 As New BankAccounts.BankAccount(Accountholder, Accountnumber, InterestRate, Balance, CountryOfOrigin)
 
         'Act
         Dim Country As String = Account1.GetCountry()
@@ -82,7 +83,7 @@ Imports Microsoft.VisualStudio.TestTools.UnitTesting
         Assert.AreEqual(Account1.GetInterestRAte(), 5.1)
     End Sub
 
-    <TestMethod()> Public Sub TestApplyInterestRAte()
+    <TestMethod()> Public Sub TestApplyInterestRate()
         'p x r x t = i => 37.07 + 10343.82 = 10380.89
 
         'Arrange
@@ -106,5 +107,45 @@ Imports Microsoft.VisualStudio.TestTools.UnitTesting
         Dim CountryOforigin As String = "Isle of MAn"
         Return New BankAccounts.BankAccount(AccountHolder, AccountNumber, InterestRate, Balance, CountryOforigin)
 
+    End Function
+
+    <TestMethod()> Public Sub TestToStringMethod()
+        'Must Print same thing like this:
+        'Isle of Man + vbcrlf
+        'ABCD 890111 1116789 + vbcrlf
+        'Ms I. N. Cognito + vbcrlf
+        'InterestRate4.3 + vbcrlf
+        '10343.82 + vbcrlf
+
+        'Arrange
+        Dim ExpectedValueString As New StringBuilder()
+        ExpectedValueString.Append("Ms I. N. Cognito" & vbCrLf)
+        ExpectedValueString.Append("ISle OF Man" & vbCrLf)
+        ExpectedValueString.Append("ABCD 890111 1116789" & vbCrLf)
+        ExpectedValueString.Append("InterestRate4.3" & vbCrLf)
+        ExpectedValueString.Append("10343.82 " & vbCrLf)
+        Dim Account1 As BankAccount = NewAccount()
+
+        'Act
+        Dim ActualString = Account1.ToString
+
+        'Assert
+        Assert.AreEqual(ExpectedValueString.ToString(), ActualString)
+    End Sub
+
+    Private Function NewAccounts() As BankAccounts.BankAccount
+
+        'HoueKeeping
+        Dim AccountHolder As String = "Ms I. N. Cognito"
+        Dim AccountNumber As String = "ABCD 890111 11167890"
+        Dim InterestRate As Double = 4.3
+        Dim Balance As Double = 10343.82
+        Dim CountryOforigin As String = "Isle of MAn"
+
+        'Instantiate a new BAnkAccount Obj
+        Dim Account1 As New BankAccount(AccountHolder, AccountNumber, InterestRate, Balance, CountryOforigin)
+
+        'Return the new object
+        Return Account1
     End Function
 End Class

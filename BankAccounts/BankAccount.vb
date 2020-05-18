@@ -1,4 +1,5 @@
-﻿''' <summary>
+﻿Imports System.Text
+''' <summary>
 ''' <author></author>
 ''' <Date>14/05/20</Date>
 ''' </summary>
@@ -10,7 +11,7 @@ Public Class BankAccount
     Private Balance As Double
     Private CountryOfOrigin As String
 
-    Public Sub New(AccountHolder As String, AccountNumber As String, Balance As Double, InterestRate As Double, CountryOfOrigin As String)
+    Public Sub New(AccountHolder As String, AccountNumber As String, InterestRate As Double, Balance As Double, CountryOfOrigin As String)
         Me.AccountHolder = AccountHolder
         Me.AccountNumber = AccountNumber
         Me.Balance = Balance
@@ -18,14 +19,14 @@ Public Class BankAccount
         Me.CountryOfOrigin = CountryOfOrigin
     End Sub
 
-    Public Sub New(AccountHolder As String, AccountNumber As String, Balance As Double, InterestRate As Double)
+    Public Sub New(AccountHolder As String, AccountNumber As String, InterestRate As Double, Balance As Double)
         Me.AccountHolder = AccountHolder
         Me.AccountNumber = AccountNumber
         Me.Balance = Balance
         Me.InterestRAte = InterestRate
     End Sub
 
-    Public Sub New(AccountHolder As String, AccountNumber As String, Balance As Double)
+    Public Sub New(AccountHolder As String, AccountNumber As String, InterestRate As Double)
         Me.AccountHolder = AccountHolder
         Me.AccountNumber = AccountNumber
         Me.Balance = Balance
@@ -43,6 +44,7 @@ Public Class BankAccount
 
     Public Function GetIBalance() As Double
         Return Me.Balance
+
     End Function
 
     Public Function GetInterestRAte() As Double
@@ -62,6 +64,18 @@ Public Class BankAccount
         Me.Balance = Math.Round(NewBalance, 2)
 
         Return Nothing
+    End Function
+
+    Public Overrides Function ToString() As String
+        Dim AccountString As New StringBuilder()
+        AccountString.Append("ISle OF Man" & vbCrLf)
+        AccountString.Append("ABCD 890111 1116789" & vbCrLf)
+        AccountString.Append("Ms I. N. Cognito" & vbCrLf)
+        AccountString.Append("InterestRate4.3" & vbCrLf)
+        AccountString.Append("10343.82 " & vbCrLf)
+
+        Return AccountString.ToString()
+
     End Function
 
 
