@@ -9,3 +9,4 @@ C:\Users\pleel\Documents\GitHub\tdd-bank-accounts-Phonpat12\BankAccounts\obj\Deb
 C:\Users\pleel\Documents\GitHub\tdd-bank-accounts-Phonpat12\BankAccounts\obj\Debug\BankAccounts.exe
 C:\Users\pleel\Documents\GitHub\tdd-bank-accounts-Phonpat12\BankAccounts\obj\Debug\BankAccounts.xml
 C:\Users\pleel\Documents\GitHub\tdd-bank-accounts-Phonpat12\BankAccounts\obj\Debug\BankAccounts.pdb
+C:\Users\pleel\Documents\GitHub\tdd-bank-accounts-Phonpat12\BankAccounts\obj\Debug\BankAccounts.BankAccountsForm.resources

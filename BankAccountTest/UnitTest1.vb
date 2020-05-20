@@ -10,7 +10,7 @@ Imports BankAccounts
         Dim Accountnumber As String = "ABCD 890111 11167890"
         Dim InterestRate As Double = 4.3
         Dim Balance As Double = 10343.82
-        Dim CountryOforigin As String = "Isle of MAn"
+        Dim CountryOforigin As String = "Isle of Man"
 
         'Act
         Dim Account1 As New BankAccounts.BankAccount(Accountholder, Accountnumber, InterestRate, Balance, CountryOforigin)
@@ -30,14 +30,14 @@ Imports BankAccounts
         Dim Accountnumber As String = "ABCD 890111 11167890"
         Dim InterestRate As Double = 4.3
         Dim Balance As Double = 10343.82
-        Dim CountryOforigin As String = "Isle of MAn"
+        Dim CountryOforigin As String = "Isle of Man"
         Dim Account1 As New BankAccounts.BankAccount(Accountholder, Accountnumber, InterestRate, Balance, CountryOforigin)
 
         'Act
-        Dim NAme As String = Account1.GetAccountHolder()
+        Dim Name As String = Account1.GetAccountHolder()
 
         'Assert
-        Assert.AreEqual(NAme, "Ms I. N. Cogonito")
+        Assert.AreEqual(Name, "Ms I. N. Cogonito")
     End Sub
 
     <TestMethod()> Public Sub TestGetInterestRate()
@@ -46,7 +46,7 @@ Imports BankAccounts
         Dim Accountnumber As String = "ABCD 890111 11167890"
         Dim InterestRate As Double = 4.3
         Dim Balance As Double = 10343.82
-        Dim CountryOforigin As String = "Isle of MAn"
+        Dim CountryOforigin As String = "Isle of Man"
         Dim Account1 As New BankAccounts.BankAccount(Accountholder, Accountnumber, InterestRate, Balance, CountryOforigin)
 
         'Act
@@ -74,7 +74,7 @@ Imports BankAccounts
 
     <TestMethod()> Public Sub TestSetInterestRate()
         'Arrange
-        Dim Account1 As BankAccounts.BankAccount = Me.NewAccount
+        Dim Account1 As BankAccounts.BankAccount = Me.NewAccount()
 
         'Act
         Account1.SetInterestRate(5.1)
@@ -87,7 +87,7 @@ Imports BankAccounts
         'p x r x t = i => 37.07 + 10343.82 = 10380.89
 
         'Arrange
-        Dim Account1 As BankAccounts.BankAccount = Me.NewAccount
+        Dim Account1 As BankAccounts.BankAccount = Me.NewAccount()
 
         'Act
         Account1.ApplyInterest()
@@ -109,30 +109,6 @@ Imports BankAccounts
 
     End Function
 
-    <TestMethod()> Public Sub TestToStringMethod()
-        'Must Print same thing like this:
-        'Isle of Man + vbcrlf
-        'ABCD 890111 1116789 + vbcrlf
-        'Ms I. N. Cognito + vbcrlf
-        'InterestRate4.3 + vbcrlf
-        '10343.82 + vbcrlf
-
-        'Arrange
-        Dim ExpectedValueString As New StringBuilder()
-        ExpectedValueString.Append("Ms I. N. Cognito" & vbCrLf)
-        ExpectedValueString.Append("ISle OF Man" & vbCrLf)
-        ExpectedValueString.Append("ABCD 890111 1116789" & vbCrLf)
-        ExpectedValueString.Append("InterestRate4.3" & vbCrLf)
-        ExpectedValueString.Append("10343.82 " & vbCrLf)
-        Dim Account1 As BankAccount = NewAccount()
-
-        'Act
-        Dim ActualString = Account1.ToString
-
-        'Assert
-        Assert.AreEqual(ExpectedValueString.ToString(), ActualString)
-    End Sub
-
     Private Function NewAccounts() As BankAccounts.BankAccount
 
         'HoueKeeping
@@ -148,4 +124,53 @@ Imports BankAccounts
         'Return the new object
         Return Account1
     End Function
+
+    <TestMethod()> Public Sub TestDeposit()
+        'Arrange
+        Dim Account1 As BankAccounts.BankAccount = Me.NewAccount()
+        Dim ExpectedValue As Double = 10343.82 + 700
+
+
+        'Act
+        Dim ActualValue As Double = Account1.Deposit(700)
+
+        'Assert
+        Assert.AreEqual(ExpectedValue, ActualValue)
+
+    End Sub
+
+    <TestMethod()> Public Sub TestWithdrawalsmall()
+        'Arrange
+        Dim Account1 As BankAccounts.BankAccount = Me.NewAccount()
+        Dim ExpectedValue As Double = 10343.82 - 700
+
+
+        'Act
+        Dim NewBalance = Account1.Withdrawal(700.0)
+
+        'Assert
+        Assert.AreEqual(ExpectedValue, NewBalance)
+
+    End Sub
+
+
+    <TestMethod()> Public Sub TestWithdrawallarge()
+        'Arrange
+        Dim Account1 As BankAccounts.BankAccount = Me.NewAccount()
+        Dim ExpectedVal As Double = 10343.82
+
+
+        'Act
+        Try
+            Dim NewBalance = Account1.Withdrawal(11000.0)
+        Catch ex As Exception
+            Console.WriteLine(ex.Message)
+        End Try
+
+        'Assert
+        Assert.AreEqual(ExpectedVal, Account1.GetIBalance())
+
+    End Sub
+
+
 End Class
