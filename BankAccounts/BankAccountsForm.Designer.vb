@@ -42,141 +42,157 @@ Partial Class BankAccountsForm
         '
         'BtnExt
         '
-        Me.BtnExt.Location = New System.Drawing.Point(552, 314)
+        Me.BtnExt.Location = New System.Drawing.Point(414, 255)
+        Me.BtnExt.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.BtnExt.Name = "BtnExt"
-        Me.BtnExt.Size = New System.Drawing.Size(129, 96)
+        Me.BtnExt.Size = New System.Drawing.Size(97, 78)
         Me.BtnExt.TabIndex = 0
         Me.BtnExt.Text = "Exit"
         Me.BtnExt.UseVisualStyleBackColor = True
         '
         'txtAccountHolder
         '
-        Me.txtAccountHolder.Location = New System.Drawing.Point(24, 40)
+        Me.txtAccountHolder.Location = New System.Drawing.Point(18, 32)
+        Me.txtAccountHolder.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtAccountHolder.Name = "txtAccountHolder"
-        Me.txtAccountHolder.Size = New System.Drawing.Size(240, 22)
+        Me.txtAccountHolder.Size = New System.Drawing.Size(181, 20)
         Me.txtAccountHolder.TabIndex = 1
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(21, 20)
+        Me.Label1.Location = New System.Drawing.Point(16, 16)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(150, 17)
+        Me.Label1.Size = New System.Drawing.Size(115, 13)
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "Account Holder Name:"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(21, 74)
+        Me.Label2.Location = New System.Drawing.Point(16, 60)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(117, 17)
+        Me.Label2.Size = New System.Drawing.Size(90, 13)
         Me.Label2.TabIndex = 3
         Me.Label2.Text = "Account Number:"
         '
         'txtAccountNumber
         '
-        Me.txtAccountNumber.Location = New System.Drawing.Point(24, 94)
+        Me.txtAccountNumber.Location = New System.Drawing.Point(18, 76)
+        Me.txtAccountNumber.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtAccountNumber.Name = "txtAccountNumber"
-        Me.txtAccountNumber.Size = New System.Drawing.Size(240, 22)
+        Me.txtAccountNumber.Size = New System.Drawing.Size(181, 20)
         Me.txtAccountNumber.TabIndex = 4
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(388, 74)
+        Me.Label3.Location = New System.Drawing.Point(291, 60)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(85, 17)
+        Me.Label3.Size = New System.Drawing.Size(66, 13)
         Me.Label3.TabIndex = 5
         Me.Label3.Text = "AccountList:"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(388, 20)
+        Me.Label4.Location = New System.Drawing.Point(291, 16)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(114, 17)
+        Me.Label4.Size = New System.Drawing.Size(84, 13)
         Me.Label4.TabIndex = 6
         Me.Label4.Text = "CountryOfOrigin:"
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(21, 196)
+        Me.Label5.Location = New System.Drawing.Point(16, 159)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(63, 17)
+        Me.Label5.Size = New System.Drawing.Size(49, 13)
         Me.Label5.TabIndex = 7
         Me.Label5.Text = "Balance:"
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(21, 134)
+        Me.Label6.Location = New System.Drawing.Point(16, 109)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(93, 17)
+        Me.Label6.Size = New System.Drawing.Size(71, 13)
         Me.Label6.TabIndex = 8
         Me.Label6.Text = "Interest Rate:"
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(24, 154)
+        Me.TextBox1.Location = New System.Drawing.Point(18, 125)
+        Me.TextBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(240, 22)
+        Me.TextBox1.Size = New System.Drawing.Size(181, 20)
         Me.TextBox1.TabIndex = 9
         '
         'TextBox2
         '
-        Me.TextBox2.Location = New System.Drawing.Point(24, 216)
+        Me.TextBox2.Location = New System.Drawing.Point(18, 176)
+        Me.TextBox2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(240, 22)
+        Me.TextBox2.Size = New System.Drawing.Size(181, 20)
         Me.TextBox2.TabIndex = 10
         '
         'TextBox3
         '
-        Me.TextBox3.Location = New System.Drawing.Point(391, 40)
+        Me.TextBox3.Location = New System.Drawing.Point(293, 32)
+        Me.TextBox3.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(240, 22)
+        Me.TextBox3.Size = New System.Drawing.Size(181, 20)
         Me.TextBox3.TabIndex = 11
         '
         'TextBox4
         '
-        Me.TextBox4.Location = New System.Drawing.Point(391, 94)
+        Me.TextBox4.Location = New System.Drawing.Point(293, 76)
+        Me.TextBox4.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(240, 22)
+        Me.TextBox4.Size = New System.Drawing.Size(181, 20)
         Me.TextBox4.TabIndex = 12
         '
         'BtnAddAccount
         '
-        Me.BtnAddAccount.Location = New System.Drawing.Point(373, 314)
+        Me.BtnAddAccount.Location = New System.Drawing.Point(280, 255)
+        Me.BtnAddAccount.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.BtnAddAccount.Name = "BtnAddAccount"
-        Me.BtnAddAccount.Size = New System.Drawing.Size(129, 96)
+        Me.BtnAddAccount.Size = New System.Drawing.Size(97, 78)
         Me.BtnAddAccount.TabIndex = 13
         Me.BtnAddAccount.Text = "Add Account"
         Me.BtnAddAccount.UseVisualStyleBackColor = True
         '
         'BtnAddInterest
         '
-        Me.BtnAddInterest.Location = New System.Drawing.Point(195, 314)
+        Me.BtnAddInterest.Location = New System.Drawing.Point(146, 255)
+        Me.BtnAddInterest.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.BtnAddInterest.Name = "BtnAddInterest"
-        Me.BtnAddInterest.Size = New System.Drawing.Size(129, 96)
+        Me.BtnAddInterest.Size = New System.Drawing.Size(97, 78)
         Me.BtnAddInterest.TabIndex = 14
         Me.BtnAddInterest.Text = "Add Interest"
         Me.BtnAddInterest.UseVisualStyleBackColor = True
         '
         'BtnPrintAccounts
         '
-        Me.BtnPrintAccounts.Location = New System.Drawing.Point(9, 314)
+        Me.BtnPrintAccounts.Location = New System.Drawing.Point(7, 255)
+        Me.BtnPrintAccounts.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.BtnPrintAccounts.Name = "BtnPrintAccounts"
-        Me.BtnPrintAccounts.Size = New System.Drawing.Size(129, 96)
+        Me.BtnPrintAccounts.Size = New System.Drawing.Size(97, 78)
         Me.BtnPrintAccounts.TabIndex = 15
         Me.BtnPrintAccounts.Text = "PrintAccounts"
         Me.BtnPrintAccounts.UseVisualStyleBackColor = True
         '
         'BankAccountsForm
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(600, 366)
         Me.Controls.Add(Me.BtnPrintAccounts)
         Me.Controls.Add(Me.BtnAddInterest)
         Me.Controls.Add(Me.BtnAddAccount)
@@ -193,8 +209,9 @@ Partial Class BankAccountsForm
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txtAccountHolder)
         Me.Controls.Add(Me.BtnExt)
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "BankAccountsForm"
-        Me.Text = "BankAccountsForm"
+        Me.Text = " "
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
