@@ -52,6 +52,11 @@ Public Class BankAccount
 
     End Function
 
+    Public Function GetAccountNumber() As String
+        Return Me.AccountNumber
+
+    End Function
+
     Public Function SetInterestRate(Rate As Double)
         Me.InterestRAte = Rate
         Return Nothing
