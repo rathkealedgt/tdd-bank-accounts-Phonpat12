@@ -11,7 +11,7 @@ Imports Microsoft.VisualStudio.TestTools.UnitTesting
         Dim Balance As String = "10343.82"
         Dim CountryOfOrigin As String = "Isle of Man"
         Dim BF As New BankAccountsForm()
-        BF.SetTestForTesting(Accountholder, Accountnumber, Balance, InterestRate, CountryOfOrigin)
+        BF.SetTextForTesting(Accountholder, Accountnumber, Balance, InterestRate, CountryOfOrigin)
 
         'Act
         BF.CreateAccount()
@@ -35,7 +35,7 @@ Imports Microsoft.VisualStudio.TestTools.UnitTesting
         Dim CountryOfOrigin As String = "Isle of Man"
 
         Dim BF As New BankAccountsForm()
-        BF.SetTestForTesting(Accountholder, Accountnumber, Balance, InterestRate, CountryOfOrigin)
+        BF.SetTextForTesting(Accountholder, Accountnumber, Balance, InterestRate, CountryOfOrigin)
 
         Try
             BF.CreateAccount()
@@ -57,7 +57,7 @@ Imports Microsoft.VisualStudio.TestTools.UnitTesting
         Dim CountryOfOrigin As String = "Isle of Man"
 
         Dim BF As New BankAccountsForm()
-        BF.SetTestForTesting(Accountholder, Accountnumber, Balance, InterestRate, CountryOfOrigin)
+        BF.SetTextForTesting(Accountholder, Accountnumber, Balance, InterestRate, CountryOfOrigin)
         Try
             BF.CreateAccount()
             Assert.Fail()
@@ -77,7 +77,7 @@ Imports Microsoft.VisualStudio.TestTools.UnitTesting
         Dim CountryOfOrigin As String = ""
 
         Dim BF As New BankAccountsForm()
-        BF.SetTestForTesting(Accountholder, Accountnumber, Balance, InterestRate, CountryOfOrigin)
+        BF.SetTextForTesting(Accountholder, Accountnumber, Balance, InterestRate, CountryOfOrigin)
         Try
             BF.CreateAccount()
             Assert.Fail()
@@ -98,7 +98,7 @@ Imports Microsoft.VisualStudio.TestTools.UnitTesting
         Dim CountryOfOrigin As String = "Isle of Man"
 
         Dim BF As New BankAccountsForm()
-        BF.SetTestForTesting(AccountHolder, AccountNumber, Balance, InterestRate, CountryOfOrigin)
+        BF.SetTextForTesting(AccountHolder, AccountNumber, Balance, InterestRate, CountryOfOrigin)
         Try
             BF.CreateAccount()
             Assert.Fail()
@@ -119,7 +119,7 @@ Imports Microsoft.VisualStudio.TestTools.UnitTesting
         Dim CountryOfOrigin As String = "Isle of Man"
 
         Dim BF As New BankAccountsForm()
-        BF.SetTestForTesting(Accountholder, Accountnumber, Balance, InterestRate, CountryOfOrigin)
+        BF.SetTextForTesting(Accountholder, Accountnumber, Balance, InterestRate, CountryOfOrigin)
         Try
             BF.CreateAccount()
             Assert.Fail()
@@ -128,5 +128,64 @@ Imports Microsoft.VisualStudio.TestTools.UnitTesting
             Assert.AreEqual("BalanceRequiredException", ex.Message)
 
         End Try
+    End Sub
+
+    <TestMethod()> Public Sub TestFiveAccounts()
+        'Arrange
+        Dim Accountholder As String = "Ms I. N. Cogonito"
+        Dim Accountnumber As String = "ABCD 890111 11167890"
+        Dim InterestRate As String = "4.3"
+        Dim Balance As String = "10343.82"
+        Dim CountryOfOrigin As String = "Isle of Man"
+
+        Dim BF As New BankAccountsForm()
+
+        Try
+            For counter As Integer = 0 To 4
+                BF.SetTextForTesting(counter & "_" & Accountholder, Accountnumber, Balance, InterestRate, CountryOfOrigin)
+                BF.CreateAccount()
+
+            Next counter
+
+        Catch ex As Exception
+            Assert.Fail()
+
+        End Try
+
+        Dim TempAccounts() As BankAccount = BF.GetAccounts()
+
+        For Each BA In TempAccounts
+            If BA Is Nothing Then Assert.Fail()
+        Next
+    End Sub
+
+
+
+    <TestMethod()> Public Sub TestCannotSixAccounts()
+        'Arrange
+        Dim Accountholder As String = "Ms I. N. Cogonito"
+        Dim Accountnumber As String = "ABCD 890111 11167890"
+        Dim InterestRate As String = "4.3"
+        Dim Balance As String = "10343.82"
+        Dim CountryOfOrigin As String = "Isle of Man"
+
+        Dim BF As New BankAccountsForm()
+
+        Try
+            For counter As Integer = 0 To 5
+                BF.SetTextForTesting(counter & "_" & Accountholder, Accountnumber, Balance, InterestRate, CountryOfOrigin)
+                BF.CreateAccount()
+
+            Next counter
+
+
+
+            Assert.Fail()
+
+        Catch ex As Exception
+            Assert.AreEqual("MaximumnumAccountsReachedException", ex.Message())
+
+        End Try
+
     End Sub
 End Class

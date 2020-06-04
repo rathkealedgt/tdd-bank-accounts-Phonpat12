@@ -34,7 +34,7 @@ Partial Class BankAccountsForm
         Me.txtInterestRate = New System.Windows.Forms.TextBox()
         Me.txtBalance = New System.Windows.Forms.TextBox()
         Me.txtCountyOfOrigin = New System.Windows.Forms.TextBox()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.txtListAccounts = New System.Windows.Forms.TextBox()
         Me.BtnAddAccount = New System.Windows.Forms.Button()
         Me.BtnAddInterest = New System.Windows.Forms.Button()
         Me.BtnPrintAccounts = New System.Windows.Forms.Button()
@@ -144,13 +144,14 @@ Partial Class BankAccountsForm
         Me.txtCountyOfOrigin.Size = New System.Drawing.Size(240, 22)
         Me.txtCountyOfOrigin.TabIndex = 11
         '
-        'TextBox4
+        'txtListAccounts
         '
-        Me.TextBox4.Location = New System.Drawing.Point(391, 94)
-        Me.TextBox4.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(240, 22)
-        Me.TextBox4.TabIndex = 12
+        Me.txtListAccounts.Location = New System.Drawing.Point(391, 94)
+        Me.txtListAccounts.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtListAccounts.Multiline = True
+        Me.txtListAccounts.Name = "txtListAccounts"
+        Me.txtListAccounts.Size = New System.Drawing.Size(240, 198)
+        Me.txtListAccounts.TabIndex = 15
         '
         'BtnAddAccount
         '
@@ -190,7 +191,7 @@ Partial Class BankAccountsForm
         Me.Controls.Add(Me.BtnPrintAccounts)
         Me.Controls.Add(Me.BtnAddInterest)
         Me.Controls.Add(Me.BtnAddAccount)
-        Me.Controls.Add(Me.TextBox4)
+        Me.Controls.Add(Me.txtListAccounts)
         Me.Controls.Add(Me.txtCountyOfOrigin)
         Me.Controls.Add(Me.txtBalance)
         Me.Controls.Add(Me.txtInterestRate)
@@ -223,7 +224,7 @@ Partial Class BankAccountsForm
     Friend WithEvents txtInterestRate As Windows.Forms.TextBox
     Friend WithEvents txtBalance As Windows.Forms.TextBox
     Friend WithEvents txtCountyOfOrigin As Windows.Forms.TextBox
-    Friend WithEvents TextBox4 As Windows.Forms.TextBox
+    Friend WithEvents txtListAccounts As Windows.Forms.TextBox
     Friend WithEvents BtnAddAccount As Windows.Forms.Button
     Friend WithEvents BtnAddInterest As Windows.Forms.Button
     Friend WithEvents BtnPrintAccounts As Windows.Forms.Button
